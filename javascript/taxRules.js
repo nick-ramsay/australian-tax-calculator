@@ -1,4 +1,4 @@
-export const taxRates = {
+let taxBrackets = {
     "resident-tax-brackets": [
         {
             "residency-status": "resident",
@@ -37,3 +37,5 @@ export const taxRates = {
         }
     ]
 }
+
+export {taxBrackets};
