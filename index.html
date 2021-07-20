@@ -11,17 +11,58 @@
 
 <body>
     <h1>Australian Tax Calculator</h1>
+    <div>
+        <p>
+            <input type="number" step="0.01" min="0.00" placeholder="Enter Gross Salary">
+            <button>Calculate</button>
+        </p>
+    </div>
     <form class="gross-salary-form">
-        <input type="number" step="0.01" min="0.00" placeholder="Enter Gross Salary">
-        <button>Calculate</button> 
+        <p>
+            <input type="radio" id="resident-button" name="residential-status" value="resident" checked="checked" />
+              <label for="html">Resident</label>
+              <input type="radio" id="non-resident-button" name="residential-status"" value=" nonresident" />
+              <label for="css">Non-Resident</label>
+        </p>
+        <p>
+            <span>Tax Year </span>
+            <select name="year" id="year">
+                <option value="2021">2020-2021</option>
+                <option value="2020">2019-2020</option>
+                <option value="2018">2018-2020</option>
+            </select>
+        </p>
     </form>
-    <p>Total Gross Salary: $<span>0.00</span></p>
-    <p>Total Tax: $<span>0.00</span></p>
-    <p class="underline">Total Net Salary: $<span>0.00</span></p>
-    <p>Total Monthly Salary: $<span>0.00</span></p>
-    <p>Total Fortnightly Salary: $<span>0.00</span></p>
-    <p>Total Salary: $<span>0.00</span></p>
-
+    <table>
+        <thead>
+            <th></th>
+            <th>Amount</th>
+        </thead>
+        <tr>
+            <td>Total Gross Salary</td>
+            <td><span>$</span><span id="total-gross-salary">0.00</span></td>
+        </tr>
+        <tr>
+            <td>Total Tax</td>
+            <td><span>$</span><span id="total-tax">0.00</span></td>
+        </tr>
+        <tr>
+            <td>Total Net Salary</td>
+            <td><span>$</span><span id="total-net-salary">0.00</span></td>
+        </tr>
+        <tr>
+            <td>Total Monthly Salary</td>
+            <td><span>$</span><span id="total-monthly-salary">0.00</span></td>
+        </tr>
+        <tr>
+            <td>Total Weekly Salary</td>
+            <td><span>$</span><span id="total-weekly-salary">0.00</span></td>
+        </tr>
+        <tr>
+            <td>Total Gross Salary</td>
+            <td><span>$</span><span id="total-gross-salary">0.00</span></td>
+        </tr>
+    </table>
     <a href="https://www.ato.gov.au/rates/individual-income-tax-rates/" target="_blank">ATO Tax Rates</a>
     <script src="./javascript/taxRules.js" type="module"></script>
     <script src="./javascript/calculations.js"></script>
