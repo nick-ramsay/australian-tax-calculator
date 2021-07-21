@@ -37,5 +37,3 @@ let taxBrackets = {
         }
     ]
 }
-
-export {taxBrackets};
