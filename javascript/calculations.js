@@ -1,6 +1,17 @@
-const calculateTax = (salary, year, residentialStatus) => {
+let resident = document.getElementById("resident-button");
+let nonresident = document.getElementById("non-resident-button");
+let taxYear = document.getElementById("year-input");
+let grossSalary = document.getElementById("gross-salary-input");
 
-    renderCalculations(10,20,30,40,53,68,79);
+const calculateTax = () => {
+    if (grossSalary.value !== "") {
+        console.log(grossSalary.value);
+        console.log(resident.checked);
+        console.log(nonresident.checked);
+        console.log(taxYear.value);
+
+        renderCalculations(10, 20, 30, 40, 53, 68, 79);
+    };
 };
 
 const renderCalculations = (fixedTax, variableTax, totalTax, totalGrossSalary, totalNetSalary, totalMonthlySalary, totalWeeklySalary) => {
@@ -15,4 +26,4 @@ const renderCalculations = (fixedTax, variableTax, totalTax, totalGrossSalary, t
 
 document.getElementById("calculate-tax-button").addEventListener("click", calculateTax);
 
-window.onload = (event) => {(renderCalculations(0,0,0,0,0,0,0));};
+window.onload = (event) => { (renderCalculations(0, 0, 0, 0, 0, 0, 0)); };
