@@ -1,6 +1,42 @@
+const commaFormat = (num) => {
+    return num.toString().replace(/,/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+}
+
 let taxBrackets = {
     resident: {
         2021: [
+            {
+                "min-income": 0,
+                "max-income": 18200,
+                "base-tax": 0,
+                "tax-rate": 0.0
+            },
+            {
+                "min-income": 18201,
+                "max-income": 45000,
+                "base-tax": 0,
+                "tax-rate": 0.19
+            },
+            {
+                "min-income": 45001,
+                "max-income": 120000,
+                "base-tax": 5092,
+                "tax-rate": 0.325
+            },
+            {
+                "min-income": 120001,
+                "max-income": 180000,
+                "base-tax": 29467,
+                "tax-rate": 0.37
+            },
+            {
+                "min-income": 180001,
+                "max-income": null,
+                "base-tax": 51667,
+                "tax-rate": 0.45
+            }
+        ],
+        2022: [
             {
                 "min-income": 0,
                 "max-income": 18200,
@@ -53,6 +89,26 @@ let taxBrackets = {
                 "base-tax": 61200,
                 "tax-rate": 0.45
             }
+        ],
+        2022: [
+            {
+                "min-income": 0,
+                "max-income": 120000,
+                "base-tax": 0,
+                "tax-rate": 0.325
+            },
+            {
+                "min-income": 120001,
+                "max-income": 180000,
+                "base-tax": 39000,
+                "tax-rate": 0.37
+            },
+            {
+                "min-income": 180001,
+                "max-income": null,
+                "base-tax": 61200,
+                "tax-rate": 0.45
+            }
         ]
     }
 }
@@ -64,7 +120,7 @@ let grossSalary = document.getElementById("gross-salary-input");
 
 const calculateTax = () => {
     if (grossSalary.value !== "") {
-        
+
         let applicableGrossSalary = grossSalary.value;
         let applicableTaxYear = taxYear.value;
 
@@ -80,8 +136,8 @@ const calculateTax = () => {
         let totalTax = fixedTax + variableTax;
         let totalGrossSalary = applicableGrossSalary;
         let totalNetSalary = totalGrossSalary - totalTax;
-        let totalNetMonthlySalary = totalNetSalary/12;
-        let totalNetWeeklySalary = totalNetSalary/52
+        let totalNetMonthlySalary = totalNetSalary / 12;
+        let totalNetWeeklySalary = totalNetSalary / 52
 
         console.log(totalGrossSalary);
 
@@ -90,13 +146,13 @@ const calculateTax = () => {
 };
 
 const renderCalculations = (fixedTax, variableTax, totalTax, totalGrossSalary, totalNetSalary, totalNetMonthlySalary, totalNetWeeklySalary) => {
-    document.getElementById("fixed-tax").innerHTML = fixedTax.toFixed(2);
-    document.getElementById("variable-tax").innerHTML = variableTax.toFixed(2);
-    document.getElementById("total-tax").innerHTML = totalTax.toFixed(2);
-    document.getElementById("total-gross-salary").innerHTML = Number(totalGrossSalary).toFixed(2);
-    document.getElementById("total-net-salary").innerHTML = totalNetSalary.toFixed(2);
-    document.getElementById("total-net-monthly-salary").innerHTML = totalNetMonthlySalary.toFixed(2);
-    document.getElementById("total-net-weekly-salary").innerHTML = totalNetWeeklySalary.toFixed(2);
+    document.getElementById("fixed-tax").innerHTML = commaFormat(fixedTax.toFixed(2));
+    document.getElementById("variable-tax").innerHTML = commaFormat(variableTax.toFixed(2));
+    document.getElementById("total-tax").innerHTML = commaFormat(totalTax.toFixed(2));
+    document.getElementById("total-gross-salary").innerHTML = commaFormat(Number(totalGrossSalary).toFixed(2));
+    document.getElementById("total-net-salary").innerHTML = commaFormat(totalNetSalary.toFixed(2));
+    document.getElementById("total-net-monthly-salary").innerHTML = commaFormat(totalNetMonthlySalary.toFixed(2));
+    document.getElementById("total-net-weekly-salary").innerHTML = commaFormat(totalNetWeeklySalary.toFixed(2));
 };
 
 document.getElementById("calculate-tax-button").addEventListener("click", calculateTax);

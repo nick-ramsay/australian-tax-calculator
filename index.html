@@ -21,44 +21,47 @@
         <p>
             <input type="radio" id="resident-button" name="residential-status" value="resident" checked="checked" />
               <label for="html">Resident</label>
-              <input type="radio" id="non-resident-button" name="residential-status"" value="nonresident" />
+              <input type="radio" id="non-resident-button" name="residential-status"" value=" nonresident" />
               <label for="css">Non-Resident</label>
         </p>
         <p>
             <span>Tax Year </span>
             <select name="year" id="year-input">
+                <option value="2022">2021-2022</option>
                 <option value="2021">2020-2021</option>
             </select>
         </p>
     </form>
     <table>
         <tr>
-            <td>Fixed Tax</td>
-            <td><span>$</span><span id="fixed-tax">0.00</span></td>
+            <td class="red-cell">Fixed Tax</td>
+            <td class="white-cell"><span>$</span><span id="fixed-tax">0.00</span></td>
         </tr>
         <tr>
-            <td>Variable Tax</td>
-            <td><span>$</span><span id="variable-tax">0.00</span></td>
+            <td class="red-cell">Variable Tax</td>
+            <td class="white-cell"><span>$</span><span id="variable-tax">0.00</span></td>
         </tr>
         <tr>
-            <td>Total Tax</td>
-            <td><span>$</span><span id="total-tax">0.00</span></td>
+            <td class="red-cell">Total Tax</td>
+            <td class="white-cell"><span>$</span><span id="total-tax">0.00</span></td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td class="green-cell">Total Gross Salary</td>
+            <td class="white-cell"><span>$</span><span id="total-gross-salary">0.00</span></td>
         </tr>
         <tr>
-            <td>Total Gross Salary</td>
-            <td><span>$</span><span id="total-gross-salary">0.00</span></td>
+            <td class="green-cell">Total Net Salary</td>
+            <td class="white-cell"><span>$</span><span id="total-net-salary">0.00</span></td>
         </tr>
         <tr>
-            <td>Total Net Salary</td>
-            <td><span>$</span><span id="total-net-salary">0.00</span></td>
+            <td class="green-cell">Total Monthly Salary</td>
+            <td class="white-cell"><span>$</span><span id="total-net-monthly-salary">0.00</span></td>
         </tr>
         <tr>
-            <td>Total Monthly Salary</td>
-            <td><span>$</span><span id="total-net-monthly-salary">0.00</span></td>
-        </tr>
-        <tr>
-            <td>Total Weekly Salary</td>
-            <td><span>$</span><span id="total-net-weekly-salary">0.00</span></td>
+            <td class="green-cell">Total Weekly Salary</td>
+            <td class="white-cell"><span>$</span><span id="total-net-weekly-salary">0.00</span></td>
         </tr>
     </table>
     <a href="https://www.ato.gov.au/rates/individual-income-tax-rates/" target="_blank">ATO Tax Rates</a>
