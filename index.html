@@ -11,12 +11,9 @@
 
 <body>
     <h1>Australian Tax Calculator</h1>
-    <div>
-        <p>
-            <input id="gross-salary-input" type="number" step="0.01" min="0.00" placeholder="Enter Gross Salary">
-            <button id="calculate-tax-button">Calculate</button>
-        </p>
-    </div>
+    <p>
+        <input id="gross-salary-input" type="number" step="0.01" min="0.00" placeholder="Enter Gross Salary">
+    </p>
     <form class="gross-salary-form">
         <p>
             <input type="radio" id="resident-button" name="residential-status" value="resident" checked="checked" />
@@ -30,6 +27,9 @@
                 <option value="2022">2021-2022</option>
                 <option value="2021">2020-2021</option>
             </select>
+        </p>
+        <p>
+            <button id="calculate-tax-button">Calculate</button>
         </p>
     </form>
     <table>
@@ -64,7 +64,13 @@
             <td class="white-cell"><span>$</span><span id="total-net-weekly-salary">0.00</span></td>
         </tr>
     </table>
-    <a href="https://www.ato.gov.au/rates/individual-income-tax-rates/" target="_blank">ATO Tax Rates</a>
+    <div id="ato-link">
+        <a href="https://www.ato.gov.au/rates/individual-income-tax-rates/" target="_blank">
+            <img class="link-icon" src="./images/ATO_Icon.webp"
+                title="Visit ATO.gov.au for Official Tax Information" />
+                Visit ato.gov.au for current tax info...
+        </a>
+    </div>
     <script src="./javascript/calculations.js"></script>
 </body>
 
