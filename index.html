@@ -4,72 +4,82 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="./style/style.css">
     <title>Australian Tax Calculator</title>
 </head>
 
 <body>
     <h1>Australian Tax Calculator</h1>
-    <p>
-        <input id="gross-salary-input" type="number" step="0.01" min="0.00" placeholder="Enter Gross Salary">
-    </p>
-    <form class="gross-salary-form">
+    <div class="container">
+        <div class="thumbtack-row">
+            <img class="thumbtack-left" id="thumbtack-icon" src="images/thumbtack.png" />
+            <img class="thumbtack-right" id="thumbtack-icon" src="images/thumbtack.png" />
+        </div>
         <p>
-            <input type="radio" id="resident-button" name="residential-status" value="resident" checked="checked" />
-              <label for="html">Resident</label>
-              <input type="radio" id="non-resident-button" name="residential-status"" value=" nonresident" />
-              <label for="css">Non-Resident</label>
+            <input id="gross-salary-input" type="number" step="0.01" min="0.00" placeholder="Enter Gross Salary...">
         </p>
-        <p>
-            <span>Tax Year </span>
-            <select name="year" id="year-input">
-                <option value="2022">2021-2022</option>
-                <option value="2021">2020-2021</option>
-            </select>
-        </p>
-        <p>
-            <button id="calculate-tax-button">Calculate</button>
-        </p>
-    </form>
-    <table>
-        <tr>
-            <td class="red-cell">Fixed Tax</td>
-            <td class="white-cell"><span>$</span><span id="fixed-tax">0.00</span></td>
-        </tr>
-        <tr>
-            <td class="red-cell">Variable Tax</td>
-            <td class="white-cell"><span>$</span><span id="variable-tax">0.00</span></td>
-        </tr>
-        <tr>
-            <td class="red-cell">Total Tax</td>
-            <td class="white-cell"><span>$</span><span id="total-tax">0.00</span></td>
-        </tr>
-    </table>
-    <table>
-        <tr>
-            <td class="green-cell">Total Gross Salary</td>
-            <td class="white-cell"><span>$</span><span id="total-gross-salary">0.00</span></td>
-        </tr>
-        <tr>
-            <td class="green-cell">Total Net Salary</td>
-            <td class="white-cell"><span>$</span><span id="total-net-salary">0.00</span></td>
-        </tr>
-        <tr>
-            <td class="green-cell">Total Monthly Salary</td>
-            <td class="white-cell"><span>$</span><span id="total-net-monthly-salary">0.00</span></td>
-        </tr>
-        <tr>
-            <td class="green-cell">Total Weekly Salary</td>
-            <td class="white-cell"><span>$</span><span id="total-net-weekly-salary">0.00</span></td>
-        </tr>
-    </table>
-    <div id="ato-link">
-        <a href="https://www.ato.gov.au/rates/individual-income-tax-rates/" target="_blank">
-            <img class="link-icon" src="./images/ATO_Icon.webp"
-                title="Visit ATO.gov.au for Official Tax Information" />
+        <form class="gross-salary-form">
+            <p>
+                <input type="radio" id="resident-button" name="residential-status" value="resident" checked="checked" />
+                  <label for="html">Resident</label>
+                  <input type="radio" id="non-resident-button" name="residential-status"" value=" nonresident" />
+                  <label for="css">Non-Resident</label>
+            </p>
+            <p>
+                <span>Tax Year </span>
+                <select name="year" id="year-input">
+                    <option value="2022">2021-2022</option>
+                    <option value="2021">2020-2021</option>
+                </select>
+            </p>
+            <p>
+                <button type="button" id="calculate-tax-button">Calculate</button>
+            </p>
+        </form>
+        <table>
+            <tr>
+                <td class="red-cell">Fixed Tax</td>
+                <td class="white-cell"><span>$</span><span id="fixed-tax">0.00</span></td>
+            </tr>
+            <tr>
+                <td class="red-cell">Variable Tax</td>
+                <td class="white-cell"><span>$</span><span id="variable-tax">0.00</span></td>
+            </tr>
+            <tr>
+                <td class="red-cell">Total Tax</td>
+                <td class="white-cell"><span>$</span><span id="total-tax">0.00</span></td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td class="green-cell">Total Gross Salary</td>
+                <td class="white-cell"><span>$</span><span id="total-gross-salary">0.00</span></td>
+            </tr>
+            <tr>
+                <td class="green-cell">Total Net Salary</td>
+                <td class="white-cell"><span>$</span><span id="total-net-salary">0.00</span></td>
+            </tr>
+            <tr>
+                <td class="green-cell">Total Monthly Salary</td>
+                <td class="white-cell"><span>$</span><span id="total-net-monthly-salary">0.00</span></td>
+            </tr>
+            <tr>
+                <td class="green-cell">Total Weekly Salary</td>
+                <td class="white-cell"><span>$</span><span id="total-net-weekly-salary">0.00</span></td>
+            </tr>
+        </table>
+        <div class="thumbtack-row">
+            <img class="thumbtack-left" id="thumbtack-icon" src="images/thumbtack.png" />
+            <img class="thumbtack-right" id="thumbtack-icon" src="images/thumbtack.png" />
+        </div>
+        <div id="ato-link">
+            <a href="https://www.ato.gov.au/rates/individual-income-tax-rates/" target="_blank">
+                <img class="link-icon" src="./images/ATO_Icon.webp"
+                    title="Visit ATO.gov.au for Official Tax Information" />
                 Visit ato.gov.au for current tax info...
-        </a>
+            </a>
+        </div>
     </div>
     <script src="./javascript/calculations.js"></script>
 </body>
