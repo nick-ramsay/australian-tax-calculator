@@ -137,15 +137,16 @@ const calculateTax = () => {
         let totalGrossSalary = applicableGrossSalary;
         let totalNetSalary = totalGrossSalary - totalTax;
         let totalNetMonthlySalary = totalNetSalary / 12;
-        let totalNetWeeklySalary = totalNetSalary / 52
+        let totalNetFortnightlySalary = totalNetSalary / 26;
+        let totalNetWeeklySalary = totalNetSalary / 52;
 
         console.log(totalGrossSalary);
 
-        renderCalculations(fixedTax, variableTax, totalTax, totalGrossSalary, totalNetSalary, totalNetMonthlySalary, totalNetWeeklySalary);
+        renderCalculations(fixedTax, variableTax, totalTax, totalGrossSalary, totalNetSalary, totalNetMonthlySalary, totalNetWeeklySalary, totalNetFortnightlySalary);
     };
 };
 
-const renderCalculations = (fixedTax, variableTax, totalTax, totalGrossSalary, totalNetSalary, totalNetMonthlySalary, totalNetWeeklySalary) => {
+const renderCalculations = (fixedTax, variableTax, totalTax, totalGrossSalary, totalNetSalary, totalNetMonthlySalary, totalNetWeeklySalary, totalNetFortnightlySalary) => {
     document.getElementById("fixed-tax").innerHTML = commaFormat(fixedTax.toFixed(2));
     document.getElementById("variable-tax").innerHTML = commaFormat(variableTax.toFixed(2));
     document.getElementById("total-tax").innerHTML = commaFormat(totalTax.toFixed(2));
@@ -153,6 +154,7 @@ const renderCalculations = (fixedTax, variableTax, totalTax, totalGrossSalary, t
     document.getElementById("total-net-salary").innerHTML = commaFormat(totalNetSalary.toFixed(2));
     document.getElementById("total-net-monthly-salary").innerHTML = commaFormat(totalNetMonthlySalary.toFixed(2));
     document.getElementById("total-net-weekly-salary").innerHTML = commaFormat(totalNetWeeklySalary.toFixed(2));
+    document.getElementById("total-net-fortnightly-salary").innerHTML = commaFormat(totalNetFortnightlySalary.toFixed(2));
 };
 
 document.getElementById("calculate-tax-button").addEventListener("click", calculateTax);
